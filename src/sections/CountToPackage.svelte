@@ -3,21 +3,21 @@
   let count = null
   let packCount = null
 
-  let result = null
+  // let result = null
   let resultRemain = null
   let resultCeil = null
   let resultCount = null
 
   $: {
     if (packCount === 0 || packCount == null || count == null) {
-      result = null
+      // result = null
       resultRemain = null
       resultCeil = null
       resultCount = null
     } else {
       resultCeil = Math.ceil(count / packCount)
       resultRemain = resultCeil * packCount - count
-      result = count / packCount
+      // result = count / packCount
       resultCount = resultCeil * packCount
     }
   }
@@ -37,7 +37,7 @@
     />
   </div>
 </div>
-<div class="row">
+<!-- <div class="row">
   <div class="cell">
     <Label
       label="Кол-во упаковок"
@@ -46,32 +46,22 @@
       error={result === -1}
     />
   </div>
-</div>
+</div> -->
 <div class="row">
   <div class="cell">
-    <Label
-      label="Целые упаковки (шт)"
-      bind:value={resultCeil}
-      disabled
-      error={resultCeil === -1}
-    />
-  </div>
-  <div class="cell">
-    <Label
-      label="Всего плиток (шт)"
-      bind:value={resultCount}
-      disabled
-      error={resultCeil === -1}
-    />
+    <Label label="Упаковки (шт)" bind:value={resultCeil} disabled />
   </div>
 </div>
 <div class="row">
   <div class="cell">
+    <Label label="Плитки (шт)" bind:value={resultCount} disabled />
+  </div>
+  <div class="cell">
     <Label
-      label="Лишниe плитки (шт)"
+      label="Остаток (шт)"
       bind:value={resultRemain}
       disabled
-      error={resultRemain === -1}
+      error={resultRemain != null && resultRemain !== 0}
     />
   </div>
 </div>
