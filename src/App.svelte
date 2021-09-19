@@ -9,12 +9,16 @@
 
   let priceSquare = 0
   let priceOne = 0
+  let priceCount = 0
+  let priceAll = 0
 
   $: {
     if (priceSquare === 0) {
       priceOne = -1
+      priceAll = -1
     } else {
       priceOne = (area || 0) * priceSquare
+      priceAll = priceOne * priceCount
     }
   }
 
@@ -74,6 +78,17 @@
     <Label
       label="Цена Плитки"
       bind:value={priceOne}
+      disabled
+      error={priceOne === -1}
+    />
+    <Label
+      label="Нужно плиток (шт)"
+      bind:value={priceCount}
+      error={priceOne === -1}
+    />
+    <Label
+      label="Общая цена (шт)"
+      bind:value={priceAll}
       disabled
       error={priceOne === -1}
     />
