@@ -61,3 +61,18 @@ button:not(:disabled):active {
 button:focus {
   border-color: #666;
 }
+
+.row {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 10px;
+}
+
+.cell {
+  flex: 1 1 0;
+  margin-right: 8px;
+}
+
+.cell:last-child {
+  margin-right: 0;
+}

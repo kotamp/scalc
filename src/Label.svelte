@@ -12,11 +12,20 @@
 </script>
 
 <div>
-  <label for="labelId">{label}</label>
-  <input type="number" name="labelId" bind:value {disabled} class:error />
+  <label for={labelId}>{label}</label>
+  <input type="number" name={labelId} bind:value {disabled} class:error />
 </div>
 
 <style>
+  div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    flex: 1 0 auto;
+  }
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -26,25 +35,36 @@
   input[type='number'] {
     -moz-appearance: textfield;
   }
+  .input {
+  }
   input {
     display: block;
     width: 100%;
     font-family: inherit;
-    font-size: 1.25rem;
-    -webkit-padding: 0.4em 0;
-    padding: 0.4em;
-    margin: 0 0 0.5em 0;
+    font-size: 20px;
+    font-size: max(20px, 1.25em);
+    -webkit-padding: 0.5em 0;
+    padding: 0.5em;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 2px;
+    border-radius: 4px;
+    background-color: #fff;
   }
-  input:disabled {
-    color: #000;
-    background-color: transparent;
+  input.error {
+    /* border-style: dashed; */
     border-color: #ff3e00;
   }
-
-  input.error {
-    background-color: #ff3e0033;
+  input:disabled {
+    background-clip: padding-box;
+    color: #000;
+    background-color: transparent;
+    border-color: #fff;
+    opacity: 1;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+    -webkit-text-fill-color: #000;
+  }
+  input:disabled.error {
+    border-bottom-color: #ff3e00;
   }
 </style>
