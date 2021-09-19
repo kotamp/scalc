@@ -1,2 +1,1318 @@
-var app=function(){"use strict";function e(){}function t(e){return e()}function n(){return Object.create(null)}function r(e){e.forEach(t)}function o(e){return"function"==typeof e}function l(e,t){return e!=e?t==t:e!==t||e&&"object"==typeof e||"function"==typeof e}function a(e,t){e.appendChild(t)}function u(e,t,n){e.insertBefore(t,n||null)}function s(e){e.parentNode.removeChild(e)}function c(e){return document.createElement(e)}function i(e){return document.createTextNode(e)}function f(){return i(" ")}function $(e,t,n,r){return e.addEventListener(t,n,r),()=>e.removeEventListener(t,n,r)}function d(e,t,n){null==n?e.removeAttribute(t):e.getAttribute(t)!==n&&e.setAttribute(t,n)}function p(e){return""===e?null:+e}function v(e,t){e.value=null==t?"":t}function m(e,t,n){e.classList[n?"add":"remove"](t)}let g;function h(e){g=e}const b=[],y=[],w=[],x=[],_=Promise.resolve();let k=!1;function z(e){w.push(e)}function E(e){x.push(e)}let C=!1;const L=new Set;function A(){if(!C){C=!0;do{for(let e=0;e<b.length;e+=1){const t=b[e];h(t),j(t.$$)}for(h(null),b.length=0;y.length;)y.pop()();for(let e=0;e<w.length;e+=1){const t=w[e];L.has(t)||(L.add(t),t())}w.length=0}while(b.length);for(;x.length;)x.pop()();k=!1,C=!1,L.clear()}}function j(e){if(null!==e.fragment){e.update(),r(e.before_update);const t=e.dirty;e.dirty=[-1],e.fragment&&e.fragment.p(e.ctx,t),e.after_update.forEach(z)}}const N=new Set;function O(e,t){e&&e.i&&(N.delete(e),e.i(t))}function I(e,t,n,r){if(e&&e.o){if(N.has(e))return;N.add(e),undefined.c.push((()=>{N.delete(e),r&&(n&&e.d(1),r())})),e.o(t)}}function M(e,t,n){const r=e.$$.props[t];void 0!==r&&(e.$$.bound[r]=n,n(e.$$.ctx[r]))}function S(e){e&&e.c()}function T(e,n,l,a){const{fragment:u,on_mount:s,on_destroy:c,after_update:i}=e.$$;u&&u.m(n,l),a||z((()=>{const n=s.map(t).filter(o);c?c.push(...n):r(n),e.$$.on_mount=[]})),i.forEach(z)}function q(e,t){const n=e.$$;null!==n.fragment&&(r(n.on_destroy),n.fragment&&n.fragment.d(t),n.on_destroy=n.fragment=null,n.ctx=[])}function B(e,t){-1===e.$$.dirty[0]&&(b.push(e),k||(k=!0,_.then(A)),e.$$.dirty.fill(0)),e.$$.dirty[t/31|0]|=1<<t%31}function P(t,o,l,a,u,c,i,f=[-1]){const $=g;h(t);const d=t.$$={fragment:null,ctx:null,props:c,update:e,not_equal:u,bound:n(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map($?$.$$.context:o.context||[]),callbacks:n(),dirty:f,skip_bound:!1,root:o.target||$.$$.root};i&&i(d.root);let p=!1;if(d.ctx=l?l(t,o.props||{},((e,n,...r)=>{const o=r.length?r[0]:n;return d.ctx&&u(d.ctx[e],d.ctx[e]=o)&&(!d.skip_bound&&d.bound[e]&&d.bound[e](o),p&&B(t,e)),n})):[],d.update(),p=!0,r(d.before_update),d.fragment=!!a&&a(d.ctx),o.target){if(o.hydrate){const e=function(e){return Array.from(e.childNodes)}(o.target);d.fragment&&d.fragment.l(e),e.forEach(s)}else d.fragment&&d.fragment.c();o.intro&&O(t.$$.fragment),T(t,o.target,o.anchor,o.customElement),A()}h($)}class D{$destroy(){q(this,1),this.$destroy=e}$on(e,t){const n=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return n.push(t),()=>{const e=n.indexOf(t);-1!==e&&n.splice(e,1)}}$set(e){var t;this.$$set&&(t=e,0!==Object.keys(t).length)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}}function F(t){let n,r,o,l,g,h,b;return{c(){n=c("div"),r=c("label"),o=i(t[1]),l=f(),g=c("input"),d(r,"for","labelId"),d(g,"type","number"),d(g,"name","labelId"),g.disabled=t[2],d(g,"class","svelte-1chfeer"),m(g,"error",t[3])},m(e,s){u(e,n,s),a(n,r),a(r,o),a(n,l),a(n,g),v(g,t[0]),h||(b=$(g,"input",t[4]),h=!0)},p(e,[t]){2&t&&function(e,t){t=""+t,e.wholeText!==t&&(e.data=t)}(o,e[1]),4&t&&(g.disabled=e[2]),1&t&&p(g.value)!==e[0]&&v(g,e[0]),8&t&&m(g,"error",e[3])},i:e,o:e,d(e){e&&s(n),h=!1,b()}}}function G(e,t,n){let{label:r="Label"}=t,{value:o=.4}=t,{disabled:l=!1}=t,{error:a=""}=t;return r.toLowerCase(),Math.random(),e.$$set=e=>{"label"in e&&n(1,r=e.label),"value"in e&&n(0,o=e.value),"disabled"in e&&n(2,l=e.disabled),"error"in e&&n(3,a=e.error)},[o,r,l,a,function(){o=p(this.value),n(0,o)}]}class H extends D{constructor(e){super(),P(this,e,G,F,l,{label:1,value:0,disabled:2,error:3})}}function J(e){let t,n,o,l,i,p,v,g,h,b,w,x,_,k,z,C,L,A,j,N,B,P,D,F,G,J,K,Q,R,U,V,W,X,Y,Z,ee,te,ne,re,oe,le,ae,ue,se,ce,ie,fe,$e;function de(t){e[16](t)}let pe={label:"Ширина (см)"};function ve(t){e[17](t)}void 0!==e[0]&&(pe.value=e[0]),g=new H({props:pe}),y.push((()=>M(g,"value",de)));let me={label:"Длина (см)"};function ge(t){e[18](t)}void 0!==e[1]&&(me.value=e[1]),w=new H({props:me}),y.push((()=>M(w,"value",ve)));let he={label:"Площадь (кв. м)",disabled:!0,error:1===e[8]&&0===e[2]};function be(t){e[19](t)}void 0!==e[2]&&(he.value=e[2]),k=new H({props:he}),y.push((()=>M(k,"value",ge)));let ye={label:"Цена одного кв. м"};function we(t){e[20](t)}void 0!==e[3]&&(ye.value=e[3]),A=new H({props:ye}),y.push((()=>M(A,"value",be)));let xe={label:"Цена Плитки",disabled:!0,error:-1===e[9]};function _e(t){e[21](t)}void 0!==e[9]&&(xe.value=e[9]),B=new H({props:xe}),y.push((()=>M(B,"value",we)));let ke={label:"Упаковка (кв. м)"};function ze(t){e[22](t)}void 0!==e[4]&&(ke.value=e[4]),G=new H({props:ke}),y.push((()=>M(G,"value",_e)));let Ee={label:"Упаковка (шт)",disabled:!0,error:-1===e[10]};function Ce(t){e[23](t)}void 0!==e[10]&&(Ee.value=e[10]),Q=new H({props:Ee}),y.push((()=>M(Q,"value",ze)));let Le={label:"Надо плиток (шт)"};function Ae(t){e[24](t)}void 0!==e[5]&&(Le.value=e[5]),W=new H({props:Le}),y.push((()=>M(W,"value",Ce)));let je={label:"Плиток в упаковке (шт)"};function Ne(t){e[25](t)}void 0!==e[6]&&(je.value=e[6]),Z=new H({props:je}),y.push((()=>M(Z,"value",Ae)));let Oe={label:"Кол-во упаковок",disabled:!0,error:-1===e[11]};function Ie(t){e[26](t)}void 0!==e[11]&&(Oe.value=e[11]),ne=new H({props:Oe}),y.push((()=>M(ne,"value",Ne)));let Me={label:"Кол-во лишних плиток (шт)",disabled:!0,error:-1===e[7]};function Se(t){e[27](t)}void 0!==e[7]&&(Me.value=e[7]),le=new H({props:Me}),y.push((()=>M(le,"value",Ie)));let Te={label:"Кол-во целых упаковок (шт)",disabled:!0,error:-1===e[12]};return void 0!==e[12]&&(Te.value=e[12]),se=new H({props:Te}),y.push((()=>M(se,"value",Se))),{c(){t=c("main"),n=c("nav"),o=c("button"),o.textContent="Цена Плитки",l=c("button"),l.textContent="Кол-во Плиток",i=c("button"),i.textContent="Кол-во Упаковок",p=f(),v=c("section"),S(g.$$.fragment),b=f(),S(w.$$.fragment),_=f(),S(k.$$.fragment),C=f(),L=c("section"),S(A.$$.fragment),N=f(),S(B.$$.fragment),D=f(),F=c("section"),S(G.$$.fragment),K=f(),S(Q.$$.fragment),U=f(),V=c("section"),S(W.$$.fragment),Y=f(),S(Z.$$.fragment),te=f(),S(ne.$$.fragment),oe=f(),S(le.$$.fragment),ue=f(),S(se.$$.fragment),d(o,"type","button"),d(o,"class","svelte-ar7zl3"),d(l,"type","button"),d(l,"class","svelte-ar7zl3"),d(i,"type","button"),d(i,"class","svelte-ar7zl3"),d(n,"class","svelte-ar7zl3"),d(v,"class","single-area svelte-ar7zl3"),m(v,"hidden",0!==e[8]&&1!==e[8]),d(L,"class","calc-single-price svelte-ar7zl3"),m(L,"hidden",0!==e[8]),d(F,"class","calc-pack-count svelte-ar7zl3"),m(F,"hidden",1!==e[8]),d(V,"class","calc-cart svelte-ar7zl3"),m(V,"hidden",2!==e[8]),d(t,"class","svelte-ar7zl3")},m(r,s){u(r,t,s),a(t,n),a(n,o),a(n,l),a(n,i),a(t,p),a(t,v),T(g,v,null),a(v,b),T(w,v,null),a(v,_),T(k,v,null),a(t,C),a(t,L),T(A,L,null),a(L,N),T(B,L,null),a(t,D),a(t,F),T(G,F,null),a(F,K),T(Q,F,null),a(t,U),a(t,V),T(W,V,null),a(V,Y),T(Z,V,null),a(V,te),T(ne,V,null),a(V,oe),T(le,V,null),a(V,ue),T(se,V,null),ie=!0,fe||($e=[$(o,"click",e[13]),$(l,"click",e[14]),$(i,"click",e[15])],fe=!0)},p(e,[t]){const n={};!h&&1&t&&(h=!0,n.value=e[0],E((()=>h=!1))),g.$set(n);const r={};!x&&2&t&&(x=!0,r.value=e[1],E((()=>x=!1))),w.$set(r);const o={};260&t&&(o.error=1===e[8]&&0===e[2]),!z&&4&t&&(z=!0,o.value=e[2],E((()=>z=!1))),k.$set(o),256&t&&m(v,"hidden",0!==e[8]&&1!==e[8]);const l={};!j&&8&t&&(j=!0,l.value=e[3],E((()=>j=!1))),A.$set(l);const a={};512&t&&(a.error=-1===e[9]),!P&&512&t&&(P=!0,a.value=e[9],E((()=>P=!1))),B.$set(a),256&t&&m(L,"hidden",0!==e[8]);const u={};!J&&16&t&&(J=!0,u.value=e[4],E((()=>J=!1))),G.$set(u);const s={};1024&t&&(s.error=-1===e[10]),!R&&1024&t&&(R=!0,s.value=e[10],E((()=>R=!1))),Q.$set(s),256&t&&m(F,"hidden",1!==e[8]);const c={};!X&&32&t&&(X=!0,c.value=e[5],E((()=>X=!1))),W.$set(c);const i={};!ee&&64&t&&(ee=!0,i.value=e[6],E((()=>ee=!1))),Z.$set(i);const f={};2048&t&&(f.error=-1===e[11]),!re&&2048&t&&(re=!0,f.value=e[11],E((()=>re=!1))),ne.$set(f);const $={};128&t&&($.error=-1===e[7]),!ae&&128&t&&(ae=!0,$.value=e[7],E((()=>ae=!1))),le.$set($);const d={};4096&t&&(d.error=-1===e[12]),!ce&&4096&t&&(ce=!0,d.value=e[12],E((()=>ce=!1))),se.$set(d),256&t&&m(V,"hidden",2!==e[8])},i(e){ie||(O(g.$$.fragment,e),O(w.$$.fragment,e),O(k.$$.fragment,e),O(A.$$.fragment,e),O(B.$$.fragment,e),O(G.$$.fragment,e),O(Q.$$.fragment,e),O(W.$$.fragment,e),O(Z.$$.fragment,e),O(ne.$$.fragment,e),O(le.$$.fragment,e),O(se.$$.fragment,e),ie=!0)},o(e){I(g.$$.fragment,e),I(w.$$.fragment,e),I(k.$$.fragment,e),I(A.$$.fragment,e),I(B.$$.fragment,e),I(G.$$.fragment,e),I(Q.$$.fragment,e),I(W.$$.fragment,e),I(Z.$$.fragment,e),I(ne.$$.fragment,e),I(le.$$.fragment,e),I(se.$$.fragment,e),ie=!1},d(e){e&&s(t),q(g),q(w),q(k),q(A),q(B),q(G),q(Q),q(W),q(Z),q(ne),q(le),q(se),fe=!1,r($e)}}}function K(e,t,n){let r=0,o=0,l=0,a=0,u=0,s=0,c=0,i=0,f=0,$=0,d=0,p=0,v=0;return e.$$.update=()=>{3&e.$$.dirty&&n(2,a=(o||0)*(l||0)*1e-4),12&e.$$.dirty&&n(9,s=0===u?-1:(a||0)/u),20&e.$$.dirty&&n(10,i=0===a?-1:c/a),224&e.$$.dirty&&(0===$?(n(11,d=-1),n(7,p=-1),n(12,v=-1)):(n(7,p=f%$),n(12,v=(f-p+$)/$),n(11,d=f/$)))},[o,l,a,u,c,f,$,p,r,s,i,d,v,()=>n(8,r=0),()=>n(8,r=1),()=>n(8,r=2),function(e){o=e,n(0,o)},function(e){l=e,n(1,l)},function(e){a=e,n(2,a),n(0,o),n(1,l)},function(e){u=e,n(3,u)},function(e){s=e,n(9,s),n(3,u),n(2,a),n(0,o),n(1,l)},function(e){c=e,n(4,c)},function(e){i=e,n(10,i),n(2,a),n(4,c),n(0,o),n(1,l)},function(e){f=e,n(5,f)},function(e){$=e,n(6,$)},function(e){d=e,n(11,d),n(6,$),n(5,f),n(7,p)},function(e){p=e,n(7,p),n(6,$),n(5,f)},function(e){v=e,n(12,v),n(6,$),n(5,f),n(7,p)}]}return new class extends D{constructor(e){super(),P(this,e,K,J,l,{})}}({target:document.body,props:{name:"world"}})}();
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function to_number(value) {
+        return value === '' ? null : +value;
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        input.value = value == null ? '' : value;
+    }
+    function toggle_class(element, name, toggle) {
+        element.classList[toggle ? 'add' : 'remove'](name);
+    }
+    function custom_event(type, detail, bubbles = false) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, bubbles, false, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    function add_flush_callback(fn) {
+        flush_callbacks.push(fn);
+    }
+    let flushing = false;
+    const seen_callbacks = new Set();
+    function flush() {
+        if (flushing)
+            return;
+        flushing = true;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            for (let i = 0; i < dirty_components.length; i += 1) {
+                const component = dirty_components[i];
+                set_current_component(component);
+                update(component.$$);
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        flushing = false;
+        seen_callbacks.clear();
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+
+    function bind(component, name, callback) {
+        const index = component.$$.props[name];
+        if (index !== undefined) {
+            component.$$.bound[index] = callback;
+            callback(component.$$.ctx[index]);
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor, customElement) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        if (!customElement) {
+            // onMount happens before the initial afterUpdate
+            add_render_callback(() => {
+                const new_on_destroy = on_mount.map(run).filter(is_function);
+                if (on_destroy) {
+                    on_destroy.push(...new_on_destroy);
+                }
+                else {
+                    // Edge case - component was destroyed immediately,
+                    // most likely as a result of a binding initialising
+                    run_all(new_on_destroy);
+                }
+                component.$$.on_mount = [];
+            });
+        }
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            on_disconnect: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(parent_component ? parent_component.$$.context : options.context || []),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false,
+            root: options.target || parent_component.$$.root
+        };
+        append_styles && append_styles($$.root);
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, options.props || {}, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor, options.customElement);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    /**
+     * Base class for Svelte components. Used when dev=false.
+     */
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.42.6' }, detail), true));
+    }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function prop_dev(node, property, value) {
+        node[property] = value;
+        dispatch_dev('SvelteDOMSetProperty', { node, property, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    /**
+     * Base class for Svelte components with some minor dev-enhancements. Used when dev=true.
+     */
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error("'target' is a required option");
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn('Component was already destroyed'); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    /* src/Label.svelte generated by Svelte v3.42.6 */
+
+    const file$1 = "src/Label.svelte";
+
+    function create_fragment$1(ctx) {
+    	let div;
+    	let label_1;
+    	let t0;
+    	let t1;
+    	let input;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			label_1 = element("label");
+    			t0 = text(/*label*/ ctx[1]);
+    			t1 = space();
+    			input = element("input");
+    			attr_dev(label_1, "for", "labelId");
+    			add_location(label_1, file$1, 12, 2, 296);
+    			attr_dev(input, "type", "number");
+    			attr_dev(input, "name", "labelId");
+    			input.disabled = /*disabled*/ ctx[2];
+    			attr_dev(input, "class", "svelte-1chfeer");
+    			toggle_class(input, "error", /*error*/ ctx[3]);
+    			add_location(input, file$1, 13, 2, 335);
+    			add_location(div, file$1, 11, 0, 288);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, label_1);
+    			append_dev(label_1, t0);
+    			append_dev(div, t1);
+    			append_dev(div, input);
+    			set_input_value(input, /*value*/ ctx[0]);
+
+    			if (!mounted) {
+    				dispose = listen_dev(input, "input", /*input_input_handler*/ ctx[4]);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*label*/ 2) set_data_dev(t0, /*label*/ ctx[1]);
+
+    			if (dirty & /*disabled*/ 4) {
+    				prop_dev(input, "disabled", /*disabled*/ ctx[2]);
+    			}
+
+    			if (dirty & /*value*/ 1 && to_number(input.value) !== /*value*/ ctx[0]) {
+    				set_input_value(input, /*value*/ ctx[0]);
+    			}
+
+    			if (dirty & /*error*/ 8) {
+    				toggle_class(input, "error", /*error*/ ctx[3]);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Label', slots, []);
+    	let { label = 'Label' } = $$props;
+    	let { value = 0.4 } = $$props;
+    	let { disabled = false } = $$props;
+    	let { error = '' } = $$props;
+    	const labelId = label.toLowerCase() + Math.random();
+    	const writable_props = ['label', 'value', 'disabled', 'error'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Label> was created with unknown prop '${key}'`);
+    	});
+
+    	function input_input_handler() {
+    		value = to_number(this.value);
+    		$$invalidate(0, value);
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ('label' in $$props) $$invalidate(1, label = $$props.label);
+    		if ('value' in $$props) $$invalidate(0, value = $$props.value);
+    		if ('disabled' in $$props) $$invalidate(2, disabled = $$props.disabled);
+    		if ('error' in $$props) $$invalidate(3, error = $$props.error);
+    	};
+
+    	$$self.$capture_state = () => ({ label, value, disabled, error, labelId });
+
+    	$$self.$inject_state = $$props => {
+    		if ('label' in $$props) $$invalidate(1, label = $$props.label);
+    		if ('value' in $$props) $$invalidate(0, value = $$props.value);
+    		if ('disabled' in $$props) $$invalidate(2, disabled = $$props.disabled);
+    		if ('error' in $$props) $$invalidate(3, error = $$props.error);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [value, label, disabled, error, input_input_handler];
+    }
+
+    class Label extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {
+    			label: 1,
+    			value: 0,
+    			disabled: 2,
+    			error: 3
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Label",
+    			options,
+    			id: create_fragment$1.name
+    		});
+    	}
+
+    	get label() {
+    		throw new Error("<Label>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set label(value) {
+    		throw new Error("<Label>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get value() {
+    		throw new Error("<Label>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set value(value) {
+    		throw new Error("<Label>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get disabled() {
+    		throw new Error("<Label>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set disabled(value) {
+    		throw new Error("<Label>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get error() {
+    		throw new Error("<Label>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set error(value) {
+    		throw new Error("<Label>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/App.svelte generated by Svelte v3.42.6 */
+    const file = "src/App.svelte";
+
+    function create_fragment(ctx) {
+    	let main;
+    	let nav;
+    	let button0;
+    	let button1;
+    	let button2;
+    	let t3;
+    	let section0;
+    	let label0;
+    	let updating_value;
+    	let t4;
+    	let label1;
+    	let updating_value_1;
+    	let t5;
+    	let label2;
+    	let updating_value_2;
+    	let t6;
+    	let section1;
+    	let label3;
+    	let updating_value_3;
+    	let t7;
+    	let label4;
+    	let updating_value_4;
+    	let t8;
+    	let section2;
+    	let label5;
+    	let updating_value_5;
+    	let t9;
+    	let label6;
+    	let updating_value_6;
+    	let t10;
+    	let section3;
+    	let label7;
+    	let updating_value_7;
+    	let t11;
+    	let label8;
+    	let updating_value_8;
+    	let t12;
+    	let label9;
+    	let updating_value_9;
+    	let t13;
+    	let label10;
+    	let updating_value_10;
+    	let t14;
+    	let label11;
+    	let updating_value_11;
+    	let current;
+    	let mounted;
+    	let dispose;
+
+    	function label0_value_binding(value) {
+    		/*label0_value_binding*/ ctx[16](value);
+    	}
+
+    	let label0_props = { label: "Ширина (см)" };
+
+    	if (/*width*/ ctx[0] !== void 0) {
+    		label0_props.value = /*width*/ ctx[0];
+    	}
+
+    	label0 = new Label({ props: label0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label0, 'value', label0_value_binding));
+
+    	function label1_value_binding(value) {
+    		/*label1_value_binding*/ ctx[17](value);
+    	}
+
+    	let label1_props = { label: "Длина (см)" };
+
+    	if (/*length*/ ctx[1] !== void 0) {
+    		label1_props.value = /*length*/ ctx[1];
+    	}
+
+    	label1 = new Label({ props: label1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label1, 'value', label1_value_binding));
+
+    	function label2_value_binding(value) {
+    		/*label2_value_binding*/ ctx[18](value);
+    	}
+
+    	let label2_props = {
+    		label: "Площадь (кв. м)",
+    		disabled: true,
+    		error: /*screen*/ ctx[8] === 1 && /*area*/ ctx[2] === 0
+    	};
+
+    	if (/*area*/ ctx[2] !== void 0) {
+    		label2_props.value = /*area*/ ctx[2];
+    	}
+
+    	label2 = new Label({ props: label2_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label2, 'value', label2_value_binding));
+
+    	function label3_value_binding(value) {
+    		/*label3_value_binding*/ ctx[19](value);
+    	}
+
+    	let label3_props = { label: "Цена одного кв. м" };
+
+    	if (/*priceSquare*/ ctx[3] !== void 0) {
+    		label3_props.value = /*priceSquare*/ ctx[3];
+    	}
+
+    	label3 = new Label({ props: label3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label3, 'value', label3_value_binding));
+
+    	function label4_value_binding(value) {
+    		/*label4_value_binding*/ ctx[20](value);
+    	}
+
+    	let label4_props = {
+    		label: "Цена Плитки",
+    		disabled: true,
+    		error: /*priceOne*/ ctx[9] === -1
+    	};
+
+    	if (/*priceOne*/ ctx[9] !== void 0) {
+    		label4_props.value = /*priceOne*/ ctx[9];
+    	}
+
+    	label4 = new Label({ props: label4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label4, 'value', label4_value_binding));
+
+    	function label5_value_binding(value) {
+    		/*label5_value_binding*/ ctx[21](value);
+    	}
+
+    	let label5_props = { label: "Упаковка (кв. м)" };
+
+    	if (/*packArea*/ ctx[4] !== void 0) {
+    		label5_props.value = /*packArea*/ ctx[4];
+    	}
+
+    	label5 = new Label({ props: label5_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label5, 'value', label5_value_binding));
+
+    	function label6_value_binding(value) {
+    		/*label6_value_binding*/ ctx[22](value);
+    	}
+
+    	let label6_props = {
+    		label: "Упаковка (шт)",
+    		disabled: true,
+    		error: /*packCount*/ ctx[10] === -1
+    	};
+
+    	if (/*packCount*/ ctx[10] !== void 0) {
+    		label6_props.value = /*packCount*/ ctx[10];
+    	}
+
+    	label6 = new Label({ props: label6_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label6, 'value', label6_value_binding));
+
+    	function label7_value_binding(value) {
+    		/*label7_value_binding*/ ctx[23](value);
+    	}
+
+    	let label7_props = { label: "Надо плиток (шт)" };
+
+    	if (/*queryCount*/ ctx[5] !== void 0) {
+    		label7_props.value = /*queryCount*/ ctx[5];
+    	}
+
+    	label7 = new Label({ props: label7_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label7, 'value', label7_value_binding));
+
+    	function label8_value_binding(value) {
+    		/*label8_value_binding*/ ctx[24](value);
+    	}
+
+    	let label8_props = { label: "Плиток в упаковке (шт)" };
+
+    	if (/*queryPackCount*/ ctx[6] !== void 0) {
+    		label8_props.value = /*queryPackCount*/ ctx[6];
+    	}
+
+    	label8 = new Label({ props: label8_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label8, 'value', label8_value_binding));
+
+    	function label9_value_binding(value) {
+    		/*label9_value_binding*/ ctx[25](value);
+    	}
+
+    	let label9_props = {
+    		label: "Кол-во упаковок",
+    		disabled: true,
+    		error: /*queryResult*/ ctx[11] === -1
+    	};
+
+    	if (/*queryResult*/ ctx[11] !== void 0) {
+    		label9_props.value = /*queryResult*/ ctx[11];
+    	}
+
+    	label9 = new Label({ props: label9_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label9, 'value', label9_value_binding));
+
+    	function label10_value_binding(value) {
+    		/*label10_value_binding*/ ctx[26](value);
+    	}
+
+    	let label10_props = {
+    		label: "Кол-во лишних плиток (шт)",
+    		disabled: true,
+    		error: /*queryResultRemainder*/ ctx[12] === -1
+    	};
+
+    	if (/*queryResultRemainder*/ ctx[12] !== void 0) {
+    		label10_props.value = /*queryResultRemainder*/ ctx[12];
+    	}
+
+    	label10 = new Label({ props: label10_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label10, 'value', label10_value_binding));
+
+    	function label11_value_binding(value) {
+    		/*label11_value_binding*/ ctx[27](value);
+    	}
+
+    	let label11_props = {
+    		label: "Кол-во целых упаковок (шт)",
+    		disabled: true,
+    		error: /*queryResultCeil*/ ctx[7] === -1
+    	};
+
+    	if (/*queryResultCeil*/ ctx[7] !== void 0) {
+    		label11_props.value = /*queryResultCeil*/ ctx[7];
+    	}
+
+    	label11 = new Label({ props: label11_props, $$inline: true });
+    	binding_callbacks.push(() => bind(label11, 'value', label11_value_binding));
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			nav = element("nav");
+    			button0 = element("button");
+    			button0.textContent = "Цена Плитки";
+    			button1 = element("button");
+    			button1.textContent = "Кол-во Плиток";
+    			button2 = element("button");
+    			button2.textContent = "Кол-во Упаковок";
+    			t3 = space();
+    			section0 = element("section");
+    			create_component(label0.$$.fragment);
+    			t4 = space();
+    			create_component(label1.$$.fragment);
+    			t5 = space();
+    			create_component(label2.$$.fragment);
+    			t6 = space();
+    			section1 = element("section");
+    			create_component(label3.$$.fragment);
+    			t7 = space();
+    			create_component(label4.$$.fragment);
+    			t8 = space();
+    			section2 = element("section");
+    			create_component(label5.$$.fragment);
+    			t9 = space();
+    			create_component(label6.$$.fragment);
+    			t10 = space();
+    			section3 = element("section");
+    			create_component(label7.$$.fragment);
+    			t11 = space();
+    			create_component(label8.$$.fragment);
+    			t12 = space();
+    			create_component(label9.$$.fragment);
+    			t13 = space();
+    			create_component(label10.$$.fragment);
+    			t14 = space();
+    			create_component(label11.$$.fragment);
+    			attr_dev(button0, "type", "button");
+    			attr_dev(button0, "class", "svelte-ar7zl3");
+    			add_location(button0, file, 48, 5, 993);
+    			attr_dev(button1, "type", "button");
+    			attr_dev(button1, "class", "svelte-ar7zl3");
+    			add_location(button1, file, 49, 5, 1070);
+    			attr_dev(button2, "type", "button");
+    			attr_dev(button2, "class", "svelte-ar7zl3");
+    			add_location(button2, file, 50, 5, 1149);
+    			attr_dev(nav, "class", "svelte-ar7zl3");
+    			add_location(nav, file, 47, 2, 983);
+    			attr_dev(section0, "class", "single-area svelte-ar7zl3");
+    			toggle_class(section0, "hidden", /*screen*/ ctx[8] !== 0 && /*screen*/ ctx[8] !== 1);
+    			add_location(section0, file, 53, 2, 1242);
+    			attr_dev(section1, "class", "calc-single-price svelte-ar7zl3");
+    			toggle_class(section1, "hidden", /*screen*/ ctx[8] !== 0);
+    			add_location(section1, file, 63, 2, 1565);
+    			attr_dev(section2, "class", "calc-pack-count svelte-ar7zl3");
+    			toggle_class(section2, "hidden", /*screen*/ ctx[8] !== 1);
+    			add_location(section2, file, 72, 2, 1826);
+    			attr_dev(section3, "class", "calc-cart svelte-ar7zl3");
+    			toggle_class(section3, "hidden", /*screen*/ ctx[8] !== 2);
+    			add_location(section3, file, 81, 2, 2085);
+    			attr_dev(main, "class", "svelte-ar7zl3");
+    			add_location(main, file, 46, 0, 974);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, nav);
+    			append_dev(nav, button0);
+    			append_dev(nav, button1);
+    			append_dev(nav, button2);
+    			append_dev(main, t3);
+    			append_dev(main, section0);
+    			mount_component(label0, section0, null);
+    			append_dev(section0, t4);
+    			mount_component(label1, section0, null);
+    			append_dev(section0, t5);
+    			mount_component(label2, section0, null);
+    			append_dev(main, t6);
+    			append_dev(main, section1);
+    			mount_component(label3, section1, null);
+    			append_dev(section1, t7);
+    			mount_component(label4, section1, null);
+    			append_dev(main, t8);
+    			append_dev(main, section2);
+    			mount_component(label5, section2, null);
+    			append_dev(section2, t9);
+    			mount_component(label6, section2, null);
+    			append_dev(main, t10);
+    			append_dev(main, section3);
+    			mount_component(label7, section3, null);
+    			append_dev(section3, t11);
+    			mount_component(label8, section3, null);
+    			append_dev(section3, t12);
+    			mount_component(label9, section3, null);
+    			append_dev(section3, t13);
+    			mount_component(label10, section3, null);
+    			append_dev(section3, t14);
+    			mount_component(label11, section3, null);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button0, "click", /*click_handler*/ ctx[13], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[14], false, false, false),
+    					listen_dev(button2, "click", /*click_handler_2*/ ctx[15], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			const label0_changes = {};
+
+    			if (!updating_value && dirty & /*width*/ 1) {
+    				updating_value = true;
+    				label0_changes.value = /*width*/ ctx[0];
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			label0.$set(label0_changes);
+    			const label1_changes = {};
+
+    			if (!updating_value_1 && dirty & /*length*/ 2) {
+    				updating_value_1 = true;
+    				label1_changes.value = /*length*/ ctx[1];
+    				add_flush_callback(() => updating_value_1 = false);
+    			}
+
+    			label1.$set(label1_changes);
+    			const label2_changes = {};
+    			if (dirty & /*screen, area*/ 260) label2_changes.error = /*screen*/ ctx[8] === 1 && /*area*/ ctx[2] === 0;
+
+    			if (!updating_value_2 && dirty & /*area*/ 4) {
+    				updating_value_2 = true;
+    				label2_changes.value = /*area*/ ctx[2];
+    				add_flush_callback(() => updating_value_2 = false);
+    			}
+
+    			label2.$set(label2_changes);
+
+    			if (dirty & /*screen*/ 256) {
+    				toggle_class(section0, "hidden", /*screen*/ ctx[8] !== 0 && /*screen*/ ctx[8] !== 1);
+    			}
+
+    			const label3_changes = {};
+
+    			if (!updating_value_3 && dirty & /*priceSquare*/ 8) {
+    				updating_value_3 = true;
+    				label3_changes.value = /*priceSquare*/ ctx[3];
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			label3.$set(label3_changes);
+    			const label4_changes = {};
+    			if (dirty & /*priceOne*/ 512) label4_changes.error = /*priceOne*/ ctx[9] === -1;
+
+    			if (!updating_value_4 && dirty & /*priceOne*/ 512) {
+    				updating_value_4 = true;
+    				label4_changes.value = /*priceOne*/ ctx[9];
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			label4.$set(label4_changes);
+
+    			if (dirty & /*screen*/ 256) {
+    				toggle_class(section1, "hidden", /*screen*/ ctx[8] !== 0);
+    			}
+
+    			const label5_changes = {};
+
+    			if (!updating_value_5 && dirty & /*packArea*/ 16) {
+    				updating_value_5 = true;
+    				label5_changes.value = /*packArea*/ ctx[4];
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			label5.$set(label5_changes);
+    			const label6_changes = {};
+    			if (dirty & /*packCount*/ 1024) label6_changes.error = /*packCount*/ ctx[10] === -1;
+
+    			if (!updating_value_6 && dirty & /*packCount*/ 1024) {
+    				updating_value_6 = true;
+    				label6_changes.value = /*packCount*/ ctx[10];
+    				add_flush_callback(() => updating_value_6 = false);
+    			}
+
+    			label6.$set(label6_changes);
+
+    			if (dirty & /*screen*/ 256) {
+    				toggle_class(section2, "hidden", /*screen*/ ctx[8] !== 1);
+    			}
+
+    			const label7_changes = {};
+
+    			if (!updating_value_7 && dirty & /*queryCount*/ 32) {
+    				updating_value_7 = true;
+    				label7_changes.value = /*queryCount*/ ctx[5];
+    				add_flush_callback(() => updating_value_7 = false);
+    			}
+
+    			label7.$set(label7_changes);
+    			const label8_changes = {};
+
+    			if (!updating_value_8 && dirty & /*queryPackCount*/ 64) {
+    				updating_value_8 = true;
+    				label8_changes.value = /*queryPackCount*/ ctx[6];
+    				add_flush_callback(() => updating_value_8 = false);
+    			}
+
+    			label8.$set(label8_changes);
+    			const label9_changes = {};
+    			if (dirty & /*queryResult*/ 2048) label9_changes.error = /*queryResult*/ ctx[11] === -1;
+
+    			if (!updating_value_9 && dirty & /*queryResult*/ 2048) {
+    				updating_value_9 = true;
+    				label9_changes.value = /*queryResult*/ ctx[11];
+    				add_flush_callback(() => updating_value_9 = false);
+    			}
+
+    			label9.$set(label9_changes);
+    			const label10_changes = {};
+    			if (dirty & /*queryResultRemainder*/ 4096) label10_changes.error = /*queryResultRemainder*/ ctx[12] === -1;
+
+    			if (!updating_value_10 && dirty & /*queryResultRemainder*/ 4096) {
+    				updating_value_10 = true;
+    				label10_changes.value = /*queryResultRemainder*/ ctx[12];
+    				add_flush_callback(() => updating_value_10 = false);
+    			}
+
+    			label10.$set(label10_changes);
+    			const label11_changes = {};
+    			if (dirty & /*queryResultCeil*/ 128) label11_changes.error = /*queryResultCeil*/ ctx[7] === -1;
+
+    			if (!updating_value_11 && dirty & /*queryResultCeil*/ 128) {
+    				updating_value_11 = true;
+    				label11_changes.value = /*queryResultCeil*/ ctx[7];
+    				add_flush_callback(() => updating_value_11 = false);
+    			}
+
+    			label11.$set(label11_changes);
+
+    			if (dirty & /*screen*/ 256) {
+    				toggle_class(section3, "hidden", /*screen*/ ctx[8] !== 2);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(label0.$$.fragment, local);
+    			transition_in(label1.$$.fragment, local);
+    			transition_in(label2.$$.fragment, local);
+    			transition_in(label3.$$.fragment, local);
+    			transition_in(label4.$$.fragment, local);
+    			transition_in(label5.$$.fragment, local);
+    			transition_in(label6.$$.fragment, local);
+    			transition_in(label7.$$.fragment, local);
+    			transition_in(label8.$$.fragment, local);
+    			transition_in(label9.$$.fragment, local);
+    			transition_in(label10.$$.fragment, local);
+    			transition_in(label11.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(label0.$$.fragment, local);
+    			transition_out(label1.$$.fragment, local);
+    			transition_out(label2.$$.fragment, local);
+    			transition_out(label3.$$.fragment, local);
+    			transition_out(label4.$$.fragment, local);
+    			transition_out(label5.$$.fragment, local);
+    			transition_out(label6.$$.fragment, local);
+    			transition_out(label7.$$.fragment, local);
+    			transition_out(label8.$$.fragment, local);
+    			transition_out(label9.$$.fragment, local);
+    			transition_out(label10.$$.fragment, local);
+    			transition_out(label11.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			destroy_component(label0);
+    			destroy_component(label1);
+    			destroy_component(label2);
+    			destroy_component(label3);
+    			destroy_component(label4);
+    			destroy_component(label5);
+    			destroy_component(label6);
+    			destroy_component(label7);
+    			destroy_component(label8);
+    			destroy_component(label9);
+    			destroy_component(label10);
+    			destroy_component(label11);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('App', slots, []);
+    	let screen = 0;
+    	let width = 0;
+    	let length = 0;
+    	let area = 0;
+    	let priceSquare = 0;
+    	let priceOne = 0;
+    	let packArea = 0;
+    	let packCount = 0;
+    	let queryCount = 0;
+    	let queryPackCount = 0;
+    	let queryResult = 0;
+    	let queryResultRemainder = 0;
+    	let queryResultCeil = 0;
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = () => $$invalidate(8, screen = 0);
+    	const click_handler_1 = () => $$invalidate(8, screen = 1);
+    	const click_handler_2 = () => $$invalidate(8, screen = 2);
+
+    	function label0_value_binding(value) {
+    		width = value;
+    		$$invalidate(0, width);
+    	}
+
+    	function label1_value_binding(value) {
+    		length = value;
+    		$$invalidate(1, length);
+    	}
+
+    	function label2_value_binding(value) {
+    		area = value;
+    		(($$invalidate(2, area), $$invalidate(0, width)), $$invalidate(1, length));
+    	}
+
+    	function label3_value_binding(value) {
+    		priceSquare = value;
+    		$$invalidate(3, priceSquare);
+    	}
+
+    	function label4_value_binding(value) {
+    		priceOne = value;
+    		(((($$invalidate(9, priceOne), $$invalidate(3, priceSquare)), $$invalidate(2, area)), $$invalidate(0, width)), $$invalidate(1, length));
+    	}
+
+    	function label5_value_binding(value) {
+    		packArea = value;
+    		$$invalidate(4, packArea);
+    	}
+
+    	function label6_value_binding(value) {
+    		packCount = value;
+    		(((($$invalidate(10, packCount), $$invalidate(2, area)), $$invalidate(4, packArea)), $$invalidate(0, width)), $$invalidate(1, length));
+    	}
+
+    	function label7_value_binding(value) {
+    		queryCount = value;
+    		$$invalidate(5, queryCount);
+    	}
+
+    	function label8_value_binding(value) {
+    		queryPackCount = value;
+    		$$invalidate(6, queryPackCount);
+    	}
+
+    	function label9_value_binding(value) {
+    		queryResult = value;
+    		((($$invalidate(11, queryResult), $$invalidate(6, queryPackCount)), $$invalidate(5, queryCount)), $$invalidate(7, queryResultCeil));
+    	}
+
+    	function label10_value_binding(value) {
+    		queryResultRemainder = value;
+    		((($$invalidate(12, queryResultRemainder), $$invalidate(6, queryPackCount)), $$invalidate(5, queryCount)), $$invalidate(7, queryResultCeil));
+    	}
+
+    	function label11_value_binding(value) {
+    		queryResultCeil = value;
+    		(($$invalidate(7, queryResultCeil), $$invalidate(6, queryPackCount)), $$invalidate(5, queryCount));
+    	}
+
+    	$$self.$capture_state = () => ({
+    		Label,
+    		screen,
+    		width,
+    		length,
+    		area,
+    		priceSquare,
+    		priceOne,
+    		packArea,
+    		packCount,
+    		queryCount,
+    		queryPackCount,
+    		queryResult,
+    		queryResultRemainder,
+    		queryResultCeil
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('screen' in $$props) $$invalidate(8, screen = $$props.screen);
+    		if ('width' in $$props) $$invalidate(0, width = $$props.width);
+    		if ('length' in $$props) $$invalidate(1, length = $$props.length);
+    		if ('area' in $$props) $$invalidate(2, area = $$props.area);
+    		if ('priceSquare' in $$props) $$invalidate(3, priceSquare = $$props.priceSquare);
+    		if ('priceOne' in $$props) $$invalidate(9, priceOne = $$props.priceOne);
+    		if ('packArea' in $$props) $$invalidate(4, packArea = $$props.packArea);
+    		if ('packCount' in $$props) $$invalidate(10, packCount = $$props.packCount);
+    		if ('queryCount' in $$props) $$invalidate(5, queryCount = $$props.queryCount);
+    		if ('queryPackCount' in $$props) $$invalidate(6, queryPackCount = $$props.queryPackCount);
+    		if ('queryResult' in $$props) $$invalidate(11, queryResult = $$props.queryResult);
+    		if ('queryResultRemainder' in $$props) $$invalidate(12, queryResultRemainder = $$props.queryResultRemainder);
+    		if ('queryResultCeil' in $$props) $$invalidate(7, queryResultCeil = $$props.queryResultCeil);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*width, length*/ 3) {
+    			$$invalidate(2, area = (width || 0) * (length || 0) * 0.0001);
+    		}
+
+    		if ($$self.$$.dirty & /*priceSquare, area*/ 12) {
+    			{
+    				if (priceSquare === 0) {
+    					$$invalidate(9, priceOne = -1);
+    				} else {
+    					$$invalidate(9, priceOne = (area || 0) * priceSquare);
+    				}
+    			}
+    		}
+
+    		if ($$self.$$.dirty & /*area, packArea*/ 20) {
+    			{
+    				if (area === 0) {
+    					$$invalidate(10, packCount = -1);
+    				} else {
+    					$$invalidate(10, packCount = packArea / area);
+    				}
+    			}
+    		}
+
+    		if ($$self.$$.dirty & /*queryPackCount, queryCount, queryResultCeil*/ 224) {
+    			// queryCount
+    			{
+    				if (queryPackCount === 0) {
+    					$$invalidate(11, queryResult = -1);
+    					$$invalidate(12, queryResultRemainder = -1);
+    					$$invalidate(7, queryResultCeil = -1);
+    				} else {
+    					$$invalidate(7, queryResultCeil = Math.ceil(queryCount / queryPackCount));
+    					$$invalidate(12, queryResultRemainder = queryResultCeil * queryPackCount - queryCount);
+    					$$invalidate(11, queryResult = queryCount / queryPackCount);
+    				}
+    			}
+    		}
+    	};
+
+    	return [
+    		width,
+    		length,
+    		area,
+    		priceSquare,
+    		packArea,
+    		queryCount,
+    		queryPackCount,
+    		queryResultCeil,
+    		screen,
+    		priceOne,
+    		packCount,
+    		queryResult,
+    		queryResultRemainder,
+    		click_handler,
+    		click_handler_1,
+    		click_handler_2,
+    		label0_value_binding,
+    		label1_value_binding,
+    		label2_value_binding,
+    		label3_value_binding,
+    		label4_value_binding,
+    		label5_value_binding,
+    		label6_value_binding,
+    		label7_value_binding,
+    		label8_value_binding,
+    		label9_value_binding,
+    		label10_value_binding,
+    		label11_value_binding
+    	];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    const app = new App({
+        target: document.body,
+        props: {
+            name: 'world'
+        }
+    });
+
+    return app;
+
+}());
 //# sourceMappingURL=bundle.js.map

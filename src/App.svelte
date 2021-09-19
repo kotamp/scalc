@@ -14,7 +14,7 @@
     if (priceSquare === 0) {
       priceOne = -1
     } else {
-      priceOne = (area || 0) / priceSquare
+      priceOne = (area || 0) * priceSquare
     }
   }
 
@@ -41,9 +41,8 @@
       queryResultRemainder = -1
       queryResultCeil = -1
     } else {
-      queryResultRemainder = queryCount % queryPackCount
-      queryResultCeil =
-        (queryCount - queryResultRemainder + queryPackCount) / queryPackCount
+      queryResultCeil = Math.ceil(queryCount/queryPackCount)
+      queryResultRemainder = queryResultCeil * queryPackCount - queryCount
       queryResult = queryCount / queryPackCount
     }
   }
