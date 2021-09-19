@@ -6,10 +6,17 @@
   export let singleArea = null
   export let mustNotZero = null
 
-  $: singleArea =
-    width == null || length == null
-      ? null
-      : round((width || 0) * (length || 0) * 0.0001)
+  $: console.log(width, length)
+
+  $: {
+    if (width == null || length == null) {
+      singleArea = null
+    } else {
+      const result = (width || 0) * (length || 0) * 0.0001
+      console.log(result, width, length)
+      singleArea = round(result)
+    }
+  }
 </script>
 
 <div class="row">

@@ -7,10 +7,8 @@
   let resultRemain = null
   let resultCeil = null
   let resultCount = null
-  // count
 
   $: {
-    console.log(packCount)
     if (packCount === 0 || packCount == null || count == null) {
       result = null
       resultRemain = null

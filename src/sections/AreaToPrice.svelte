@@ -30,12 +30,12 @@
     />
   </div>
   <div class="cell">
-    <Label label="Нужно плиток (шт)" bind:value={count} error={count == null} />
+    <Label label="Плитки (шт)" bind:value={count} error={count == null} />
   </div>
 </div>
 <div class="row">
   <div class="cell">
-    <Label label="Общая цена (шт)" bind:value={resultPrice} disabled />
+    <Label label="Общая цена" bind:value={resultPrice} disabled />
   </div>
   <div class="cell">
     <Label label="Общая площадь (кв. м)" bind:value={resultArea} disabled />
