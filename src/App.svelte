@@ -33,17 +33,21 @@
   let queryResult = 0
   let queryResultRemainder = 0
   let queryResultCeil = 0
+  let queryFull = 0
   // queryCount
 
   $: {
-    if (queryPackCount === 0) {
+    console.log(queryPackCount)
+    if (queryPackCount === 0 || queryPackCount == null || queryCount == null) {
       queryResult = -1
       queryResultRemainder = -1
       queryResultCeil = -1
+      queryFull = -1
     } else {
       queryResultCeil = Math.ceil(queryCount/queryPackCount)
       queryResultRemainder = queryResultCeil * queryPackCount - queryCount
       queryResult = queryCount / queryPackCount
+      queryFull = queryResultCeil * queryPackCount
     }
   }
 </script>
@@ -101,6 +105,12 @@
     <Label
       label="Кол-во целых упаковок (шт)"
       bind:value={queryResultCeil}
+      disabled
+      error={queryResultCeil === -1}
+    />
+    <Label
+      label="Кол-во плиток (шт)"
+      bind:value={queryFull}
       disabled
       error={queryResultCeil === -1}
     />
