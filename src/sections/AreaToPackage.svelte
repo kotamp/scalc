@@ -8,10 +8,10 @@
   let packCount = null
 
   $: {
-    if (singleArea == null || packArea == null || singleArea === 0) {
+    if (singleArea == null || singleArea === 0) {
       packCount = null
     } else {
-      packCount = round(packArea / singleArea)
+      packCount = round((packArea || 0) / singleArea)
     }
   }
 </script>
@@ -22,6 +22,7 @@
       label="В упаковкe (кв. м)"
       bind:value={packArea}
       error={packArea == null}
+      placeholder="0"
     />
   </div>
   <div class="cell">

@@ -10,7 +10,7 @@
 
   $: {
     if (width == null || length == null) {
-      singleArea = null
+      singleArea = 0
     } else {
       const result = (width || 0) * (length || 0) * 0.0001
       console.log(result, width, length)
@@ -21,10 +21,20 @@
 
 <div class="row">
   <div class="cell">
-    <Label label="Ширина (см)" bind:value={width} error={width == null} />
+    <Label
+      label="Ширина (см)"
+      bind:value={width}
+      error={width == null}
+      placeholder="0"
+    />
   </div>
   <div class="cell">
-    <Label label="Длина (см)" bind:value={length} error={length == null} />
+    <Label
+      label="Длина (см)"
+      bind:value={length}
+      error={length == null}
+      placeholder="0"
+    />
   </div>
 </div>
 <div class="row">

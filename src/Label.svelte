@@ -3,6 +3,7 @@
   export let value = 0.4
   export let disabled = false
   export let error = ''
+  export let placeholder = ''
   const labelId = label.toLowerCase() + Math.random()
 
   // $: {
@@ -13,7 +14,14 @@
 
 <div>
   <label for={labelId}>{label}</label>
-  <input type="number" name={labelId} bind:value {disabled} class:error />
+  <input
+    type="number"
+    name={labelId}
+    bind:value
+    {disabled}
+    class:error
+    {placeholder}
+  />
 </div>
 
 <style>

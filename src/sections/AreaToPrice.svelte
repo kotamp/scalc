@@ -10,14 +10,16 @@
   let resultArea = null
 
   $: {
-    if (squarePrice == null || singleArea == null || count === null) {
-      resultPrice = null
-      resultArea = null
-    } else {
-      let singlePrice = squarePrice * singleArea
-      resultPrice = round(singlePrice * count)
-      resultArea = round(singleArea * count)
-    }
+    // if (count == null) count = 0
+    // if (squarePrice == null) squarePrice = 0
+    // if (squarePrice == null || singleArea == null || count === null) {
+    //   resultPrice = null
+    //   resultArea = null
+    // } else {
+    let singlePrice = (squarePrice || 0) * singleArea
+    resultPrice = round(singlePrice * (count || 0))
+    resultArea = round(singleArea * (count || 0))
+    // }
   }
 </script>
 
@@ -27,10 +29,16 @@
       label="Цена 1 кв. м"
       bind:value={squarePrice}
       error={squarePrice == null}
+      placeholder="0"
     />
   </div>
   <div class="cell">
-    <Label label="Плитки (шт)" bind:value={count} error={count == null} />
+    <Label
+      label="Плитки (шт)"
+      bind:value={count}
+      error={count == null}
+      placeholder="0"
+    />
   </div>
 </div>
 <div class="row">
