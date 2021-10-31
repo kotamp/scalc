@@ -1,48 +1,38 @@
 <script lang="ts">
-  import Label from './Label.svelte'
-  import Area from './sections/Area.svelte'
-  import AreaToPrice from './sections/AreaToPrice.svelte'
-  import AreaToPackage from './sections/AreaToPackage.svelte'
-  import CountToPackage from './sections/CountToPackage.svelte'
-  let screen = 0
+  import Header from './sections/Header.svelte'
 
-  let singleArea = null
-  let singlePrice = null
+  import CellPrice from './sections/pages/CellPrice.svelte'
+  import CellCount from './sections/pages/CellCount.svelte'
+  import AreaPrice from './sections/pages/AreaPrice.svelte'
+  import PackCount from './sections/pages/PackCount.svelte'
 
-  let packArea = 0
-  let packCount = 0
+  const screenKeys = ['cellPrice', 'cellCount', 'areaPrice', 'packCount']
+
+  const screenNames = [
+    '1. Цена плитки',
+    '2. Кол-во плиток',
+    '3. Цена площади',
+    '4. Кол-во упаковок',
+  ]
+
+  let currentScreen = screenKeys[0]
 </script>
 
 <main>
-  <nav class="row">
-    <button
-      class="cell"
-      class:selected={screen === 0}
-      type="button"
-      on:click={() => (screen = 0)}>Цена Плитки</button
-    ><button
-      class="cell"
-      class:selected={screen === 1}
-      type="button"
-      on:click={() => (screen = 1)}>Кол-во Плиток</button
-    ><button
-      class="cell"
-      class:selected={screen === 2}
-      type="button"
-      on:click={() => (screen = 2)}>Кол-во Упаковок</button
-    ></nav
-  >
-  <section class="single-area" class:hidden={screen !== 0 && screen !== 1}>
-    <Area bind:singleArea mustNotZero={screen === 1} />
+  <Header keys={screenKeys} names={screenNames} bind:current={currentScreen} />
+  <hr />
+
+  <section class:hidden={'cellPrice' !== currentScreen}>
+    <CellPrice />
   </section>
-  <section class="calc-single-price" class:hidden={screen !== 0}>
-    <AreaToPrice bind:singleArea />
+  <section class:hidden={'cellCount' !== currentScreen}>
+    <CellCount />
   </section>
-  <section class="calc-pack-count" class:hidden={screen !== 1}>
-    <AreaToPackage bind:singleArea />
+  <section class:hidden={'areaPrice' !== currentScreen}>
+    <AreaPrice />
   </section>
-  <section class="calc-cart" class:hidden={screen !== 2}>
-    <CountToPackage />
+  <section class:hidden={'packCount' !== currentScreen}>
+    <PackCount />
   </section>
 </main>
 
@@ -51,29 +41,13 @@
     display: none;
   }
 
-  nav {
-    display: flex;
-  }
-  nav > * {
-    flex: 1 0 0;
-  }
-
   section {
     margin-bottom: 0px;
+    padding: 1em;
   }
 
   main {
-    /* text-align: center; */
-    padding: 1em;
-    /* max-width: 240px; */
     margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
   }
 
   @media (min-width: 640px) {
@@ -81,7 +55,9 @@
       max-width: none;
     }
   }
-  .selected {
-    border-color: #ff3e00;
+
+  hr {
+    border: none;
+    border-top: 1px solid #ccc8;
   }
 </style>

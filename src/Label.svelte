@@ -2,14 +2,9 @@
   export let label = 'Label'
   export let value = 0.4
   export let disabled = false
-  export let error = ''
+  export let error = false
   export let placeholder = ''
   const labelId = label.toLowerCase() + Math.random()
-
-  // $: {
-  //   console.log(width, length, area)
-  //   area = parseFloat(width) * parseFloat(length)
-  // }
 </script>
 
 <div>
@@ -42,8 +37,6 @@
 
   input[type='number'] {
     -moz-appearance: textfield;
-  }
-  .input {
   }
   input {
     display: block;
