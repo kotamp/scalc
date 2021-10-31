@@ -16,6 +16,7 @@
     {disabled}
     class:error
     {placeholder}
+    on:focus
   />
 </div>
 

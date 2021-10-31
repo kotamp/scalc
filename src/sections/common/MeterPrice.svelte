@@ -9,5 +9,6 @@
     bind:value={$meterPrice}
     error={$meterPrice == null}
     placeholder="0"
+    on:focus
   />
 </div>

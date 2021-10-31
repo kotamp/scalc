@@ -37,8 +37,8 @@
     <Label
       label="Площадь (кв. м)"
       bind:value={$cellArea}
-      disabled
       error={mustNotZero && $cellArea === 0}
+      disabled
     />
   </div>
 </div>

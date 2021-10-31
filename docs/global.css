@@ -75,6 +75,14 @@ button:focus {
   margin-right: 8px;
 }
 
+.cell-small {
+  flex: 0 0 0;
+}
+
+.cell-center {
+  align-self: flex-end;
+}
+
 .cell:last-child {
   margin-right: 0;
 }

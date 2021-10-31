@@ -3,16 +3,14 @@
 
   import CellPrice from './sections/pages/CellPrice.svelte'
   import CellCount from './sections/pages/CellCount.svelte'
-  import AreaPrice from './sections/pages/AreaPrice.svelte'
   import PackCount from './sections/pages/PackCount.svelte'
 
-  const screenKeys = ['cellPrice', 'cellCount', 'areaPrice', 'packCount']
+  const screenKeys = ['cellPrice', 'cellCount', 'packCount']
 
   const screenNames = [
     '1. Цена плитки',
     '2. Кол-во плиток',
-    '3. Цена площади',
-    '4. Кол-во упаковок',
+    '3. Кол-во упаковок',
   ]
 
   let currentScreen = screenKeys[0]
@@ -27,9 +25,6 @@
   </section>
   <section class:hidden={'cellCount' !== currentScreen}>
     <CellCount />
-  </section>
-  <section class:hidden={'areaPrice' !== currentScreen}>
-    <AreaPrice />
   </section>
   <section class:hidden={'packCount' !== currentScreen}>
     <PackCount />
